@@ -10,7 +10,7 @@ const BadgeWrapper = styled.p`
   justify-content: center;
   border-radius: 210px;
   font-weight: bold;
-  background-color: ${({ badgecolor }) => badgecolor || "#934A5F"};
+  background-color: ${({ badgeColor }) => badgeColor || "#934A5F"};
   margin-right: 10px;
 `;
 
