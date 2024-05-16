@@ -15,10 +15,14 @@ const HeaderWrapper = styled.header`
   box-sizing: border-box;
 `;
 
+const HeaderTitle = styled.h1`
+  font-size: 1.6rem;
+`;
+
 const Header = () => {
   return (
     <HeaderWrapper>
-      <h1 style={{ fontSize: "1.6rem" }}>Todo List</h1>
+      <HeaderTitle>Todo List</HeaderTitle>
     </HeaderWrapper>
   );
 };

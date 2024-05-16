@@ -22,6 +22,10 @@ const InputFormWrapper = styled.div`
   & > *:last-child {
     margin-bottom: 0; /* 마지막 요소에는 마진을 추가하지 않음 */
   }
+
+  .todoListInput::placeholder {
+    color: #fff;
+  }
 `;
 
 const InputForm = ({
@@ -53,6 +57,7 @@ const InputForm = ({
         onChange={handleInputChange}
       />
       <input
+        className="todoListInput"
         type="text"
         name="todoText"
         placeholder="할 일 내용"

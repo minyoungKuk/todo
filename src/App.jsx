@@ -1,11 +1,19 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import "./App.css";
 import InputForm from "./components/InputForm";
 import Layout from "./components/Layout/Layout";
 import TodoList from "./components/TodoList";
 
+const AddButton = styled.button`
+  margin: 10px 0;
+  position: absolute;
+  top: 0;
+  right: 40px;
+`;
+
 const App = () => {
-  const [showInput, setShowInput] = useState(false);
+  const [isShowInput, setIsShowInput] = useState(false);
   const [newTodo, setNewTodo] = useState({
     category: "",
     dueDate: "",
@@ -13,8 +21,8 @@ const App = () => {
   });
   const [todos, setTodos] = useState([]);
 
-  const addTodo = () => {
-    setShowInput(true);
+  const showInput = () => {
+    setIsShowInput(true);
   };
 
   const handleInputChange = (e) => {
@@ -34,7 +42,7 @@ const App = () => {
         done: false,
       };
       setTodos([...todos, todo]);
-      setShowInput(false);
+      setIsShowInput(false);
       setNewTodo({
         category: "",
         dueDate: "",
@@ -59,20 +67,8 @@ const App = () => {
 
   return (
     <Layout>
-      {!showInput && (
-        <button
-          style={{
-            margin: "10px 0",
-            position: "absolute",
-            top: "0",
-            right: "40px",
-          }}
-          onClick={addTodo}
-        >
-          + 할 일 추가
-        </button>
-      )}
-      {showInput && (
+      {!isShowInput && <AddButton onClick={showInput}>+ 할 일 추가</AddButton>}
+      {isShowInput && (
         <InputForm
           newTodo={newTodo}
           handleInputChange={handleInputChange}

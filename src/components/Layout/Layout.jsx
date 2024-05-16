@@ -10,11 +10,16 @@ const LayoutWrapper = styled.div`
   position: relative;
 `;
 
+const MainWrapper = styled.div`
+  padding: 40px;
+  max-width: 1200px;
+`;
+
 const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
       <Header />
-      <div style={{ padding: "40px", maxWidth: "1200px" }}> {children} </div>
+      <MainWrapper> {children} </MainWrapper>
     </LayoutWrapper>
   );
 };

@@ -29,6 +29,29 @@ const FlexContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+const InputContainer = styled.p`
+  display: flex;
+  padding: 10px 0%;
+`;
+
+const ChkBox = styled.input`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #fff;
+`;
+
+const TodoText = styled.span`
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: ${({ $done }) => ($done ? "line-through" : "none")};
 `;
 
 const DateText = styled.p`
@@ -54,7 +77,7 @@ const TodoList = ({ todo, handleToggleDone, handleDeleteTodo }) => {
   return (
     <TodoListWrapper>
       <FlexContainer>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div>
           <Badge $badgeColor={badgeColor}>{todo.category}</Badge>
           <DateText> {todo.createdAt} </DateText>
         </div>
@@ -62,33 +85,14 @@ const TodoList = ({ todo, handleToggleDone, handleDeleteTodo }) => {
         <CloseButton onClick={handleDeleteTodo(todo.id)}></CloseButton>
       </FlexContainer>
 
-      <p
-        style={{
-          display: "flex",
-          padding: "10px 0",
-        }}
-      >
-        <input
-          style={{
-            width: "20px",
-            height: "20px",
-            marginRight: "10px",
-            backgroundColor: "#fff",
-          }}
+      <InputContainer>
+        <ChkBox
           type="checkbox"
           checked={todo.done}
           onChange={handleToggleDone(todo.id)}
         />
-        <span
-          style={{
-            fontSize: "1.2rem",
-            fontWeight: "500",
-            textDecoration: todo.done ? "line-through" : "none",
-          }}
-        >
-          {todo.todoText}
-        </span>
-      </p>
+        <TodoText $done={todo.done}>{todo.todoText}</TodoText>
+      </InputContainer>
 
       <DateText> DUE DATE : {todo.dueDate} </DateText>
     </TodoListWrapper>
