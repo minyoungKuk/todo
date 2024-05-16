@@ -55,7 +55,7 @@ const TodoList = ({ todo, handleToggleDone, handleDeleteTodo }) => {
     <TodoListWrapper>
       <FlexContainer>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Badge badgeColor={badgeColor}>{todo.category}</Badge>
+          <Badge $badgeColor={badgeColor}>{todo.category}</Badge>
           <DateText> {todo.createdAt} </DateText>
         </div>
 

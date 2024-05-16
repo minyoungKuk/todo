@@ -1,7 +1,7 @@
 // Badge.jsx
 import styled from "styled-components";
 
-const BadgeWrapper = styled.p`
+const Badge = styled.p`
   margin: 0;
   padding: 5px 20px;
   height: 20px;
@@ -10,8 +10,8 @@ const BadgeWrapper = styled.p`
   justify-content: center;
   border-radius: 210px;
   font-weight: bold;
-  background-color: ${({ badgeColor }) => badgeColor || "#934A5F"};
+  background-color: ${({ $badgeColor }) => $badgeColor || "#934A5F"};
   margin-right: 10px;
 `;
 
-export default BadgeWrapper;
+export default Badge;
