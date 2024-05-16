@@ -15,7 +15,7 @@ const HeaderWrapper = styled.header`
   box-sizing: border-box;
 `;
 
-const Haeder = () => {
+const Header = () => {
   return (
     <HeaderWrapper>
       <h1 style={{ fontSize: "1.6rem" }}>Todo List</h1>
@@ -23,4 +23,4 @@ const Haeder = () => {
   );
 };
 
-export default Haeder;
+export default Header;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Haeder from "./Haeder";
+import Header from "./Header";
 
 const LayoutWrapper = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ const LayoutWrapper = styled.div`
 const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
-      <Haeder />
+      <Header />
       <div style={{ padding: "40px", maxWidth: "1200px" }}> {children} </div>
     </LayoutWrapper>
   );
